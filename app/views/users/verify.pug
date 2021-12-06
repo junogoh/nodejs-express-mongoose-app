@@ -1,0 +1,7 @@
+extends ../layouts/default
+
+block main
+  form.form-signin(action="/users/resend", method="post", role="form")
+    input(type="hidden", name="_csrf", value=csrf_token)
+    input(type="hidden", name="_id", value=user._id)
+    button.btn.btn-lg.btn-primary.btn-block(type='submit') Resend Email Verification

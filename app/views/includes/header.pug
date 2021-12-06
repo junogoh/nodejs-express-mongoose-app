@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+  a.navbar-brand(href='/') Fatbull
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarCollapse.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      - if (req.isAuthenticated())
+        li.nav-item(class=isActive(`/users/${req.user.id}`) && 'active')
+          a.nav-link(href="/users/"+req.user.id, title="Dashboard") Dashboard
+        li.nav-item(class=isActive(`/users/resetpassword/${req.user.id}`) && 'active')
+          a.nav-link(href="/users/resetpassword/"+req.user.id, title="Reset Password") Reset Password
+        li.nav-item
+          a.nav-link(href="/logout", title="logout") Logout
+      - else
+        li(class=isActive('/login') ? 'active nav-item' : 'nav-item')
+          a.nav-link(href="/login", title="Login") Login
