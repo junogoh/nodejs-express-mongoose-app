@@ -9,12 +9,12 @@ module.exports = {
   google: {
     clientID: process.env.GOOGLE_CLIENTID,
     clientSecret: process.env.GOOGLE_SECRET,
-    callbackURL: `http://juno-nodejs-demo.herokuapp.com/auth/google/callback`,
+    callbackURL: `https://juno-nodejs-demo.herokuapp.com/auth/google/callback`,
   },
   facebook: {
     clientID: process.env.FACEBOOK_CLIENTID,
     clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: `http://juno-nodejs-demo.herokuapp.com/auth/facebook/callback`,
+    callbackURL: `https://juno-nodejs-demo.herokuapp.com/auth/facebook/callback`,
   },
   email: {
     user: process.env.EMAIL_USER,
