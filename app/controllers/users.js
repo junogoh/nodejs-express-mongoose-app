@@ -115,7 +115,7 @@ exports.create = async(function*(req, res) {
       to: req.body.email,
       subject: 'Please verify account',
       html: `Hello junoinbox, Thank you for joining here. Please verify your account by clicking the link below
-      <a href='${config.verificationlink}/users/verify?activation_key=${activationKey}'>Verify</a>
+      <a href='${config.verificationlink}/users/activate?activation_key=${activationKey}'>Verify</a>
       `,
     };
     transporter.sendMail(mailOptions, function(error, info){
