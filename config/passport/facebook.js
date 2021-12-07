@@ -29,7 +29,7 @@ module.exports = new FacebookStrategy(
         console.log(profile);
         user = new User({
           name: profile.displayName,
-          email: profile.emails[0].value,
+          email: '',
           username: profile.username,
           provider: 'facebook',
           google: profile._json
